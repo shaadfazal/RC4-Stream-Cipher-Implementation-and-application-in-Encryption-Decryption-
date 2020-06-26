@@ -1,0 +1,4 @@
+Encrypted text
+]	¦ZÙ7mVPºX;oq÷óÀl­l­ù¨'U%v9ÅAú -æ|áC
+The decrypted text is
+Text encryption decryption in python using RC4
