@@ -3,7 +3,7 @@ import random
 S = []
 np.array(S)
 for i in range(0,256):
-    S.append(i)
+    S.append(i)                                 # Array Initialization
 print("Original S is",S)
 keylen=16
 K=[]
@@ -16,7 +16,7 @@ for i in range(0,256):
     T.append(K[i%keylen])
 print("temporary T is",T)
 j=0
-for i in range(0,256):
+for i in range(0,256):                      # RC-4 Algorithm for key generation
     j=(j+S[i]+T[i])%256
     temp=S[i]
     S[i]=S[j]
@@ -32,16 +32,16 @@ fp = open('plaintextRC4.txt', "rt")
 count=0
 for i in fp:
     for a in i:
-        val.append(ord(a))
+        val.append(ord(a))              # Loading file character-wise
         count+=1
 print("ASCII values of",count,"read plaintext characters are",val)
-enc=np.bitwise_xor(S[1:count+1],val)
+enc=np.bitwise_xor(S[1:count+1],val)                                # Encryption
 print("The encrypted ASCII character value encoding is",enc)
 encrypt=[]
 for i in enc:
-    encrypt.append(chr(i))
+    encrypt.append(chr(i))                                          # Converting from ASCII numeric to character
 print("The corresponding encrypted ASCII characters",encrypt)
-dec=np.bitwise_xor(enc,S[1:count+1])
+dec=np.bitwise_xor(enc,S[1:count+1])                                # Decryption
 print("The decrypted ASCII character value encoding",dec)
 decrypt=[]
 for i in dec:
